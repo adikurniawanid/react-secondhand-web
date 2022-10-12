@@ -22,10 +22,7 @@ const Register = () => {
       name: data.name,
     };
     axios
-      .post(
-        "https://api-fafifu-secondhand.herokuapp.com/v1/auth/register",
-        postData
-      )
+      .post("${process.env.REACT_APP_URL_API}/v1/auth/register", postData)
       .then((res) => {
         setStatusCode(res.status);
         if (statusCode === 20) {
@@ -42,12 +39,10 @@ const Register = () => {
             pesanError += "</p>";
           }
 
-          setRegStatus(
-            {
-              success: false,
-              message: pesanError,
-            },
-          );
+          setRegStatus({
+            success: false,
+            message: pesanError,
+          });
         } else {
           setRegStatus({
             success: false,
