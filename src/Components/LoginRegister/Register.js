@@ -22,7 +22,7 @@ const Register = () => {
       name: data.name,
     };
     axios
-      .post("${process.env.REACT_APP_URL_API}/v1/auth/register", postData)
+      .post(`${process.env.REACT_APP_URL_API}/v1/auth/register`, postData)
       .then((res) => {
         setStatusCode(res.status);
         if (statusCode === 20) {

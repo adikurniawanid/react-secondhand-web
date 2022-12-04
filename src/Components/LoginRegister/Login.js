@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     axios
-      .post("${process.env.REACT_APP_URL_API}/v1/auth/login", postData)
+      .post(`${process.env.REACT_APP_URL_API}/v1/auth/login`, postData)
       .then((res) => {
         if (typeof res.data.data.token != "undefined") {
           localStorage.setItem("jwtToken", res.data.data.token);

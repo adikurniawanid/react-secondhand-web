@@ -40,7 +40,7 @@ const FormAddProduct = () => {
 
     try {
       await axios
-        .post("${process.env.REACT_APP_URL_API}/v1/product/", formData, {
+        .post(`${process.env.REACT_APP_URL_API}/v1/product/`, formData, {
           headers: {
             Authorization: localStorage.getItem("jwtToken"),
             "content-type": "multipart/form-data",
